@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './components/style/App.css';
-import {Switch, Route} from "react-router-dom";
+import './components/style/NavLink.css';
+
+import {Switch, Route, NavLink} from "react-router-dom";
 import Feature from "./components/Feature"; 
 import Search from "./components/Search"; 
-import NavLink from './components/NavLink'; 
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to my car browser</h1>
         </header>
         <nav>
-          <NavLink to="/">Home</NavLink>
+          <NavLink exact={true} to="/">Home</NavLink>
           <NavLink to="/search">Search</NavLink>
         </nav>
 
