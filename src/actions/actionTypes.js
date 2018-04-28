@@ -1,5 +1,6 @@
-export const GET_FEATURE = "GET_FEATURE";
-export const GET_MAKES = "GET_MAKES";
-export const GET_MODELS = "GET_MODELS";
-export const GET_CAR = "GET_CAR";
+export const SELECT_MAKE = "SELECT_MAKE";
+export const SELECT_MODEL = "SELECT_MODEL";
 
+export const POPULATE_FEATURE = "POPULATE_FEATURE"; 
+export const POPULATE_MAKES = "POPULATE_MAKES"; 
+export const POPULATE_MODELS = "POPULATE_MODELS"; 

@@ -10,19 +10,22 @@ const initialState = {
 
 function someAction(state, action) {
 
+    console.log(action);
 
     return state; 
 }
 
 export default function reducers(state = initialState, action) {
     switch (action.type) {
-      case ActionTypes.GET_FEATURE:
+      case ActionTypes.POPULATE_FEATURE:
       return Object.assign({}, state, someAction(state, action));
-      case ActionTypes.GET_MAKES:
+      case ActionTypes.POPULATE_MAKES:
       return Object.assign({}, state, someAction(state, action));
-      case ActionTypes.GET_MODELS:
+      case ActionTypes.POPULATE_MODELS:
       return Object.assign({}, state, someAction(state, action));
-      case ActionTypes.GET_CAR:
+      case ActionTypes.SELECT_MAKE:
+      return Object.assign({}, state, someAction(state, action));
+      case ActionTypes.SELECT_MODEL:
       return Object.assign({}, state, someAction(state, action));
       default:
       return state;

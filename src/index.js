@@ -5,14 +5,24 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import App from './App';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'; 
 
 import registerServiceWorker from './registerServiceWorker';
 
+import * as Actions from './actions/actions'; 
 
 import reducers from "./reducers/reducers"; 
 
-const store = createStore(reducers)
+const store = createStore(
+    reducers,
+    applyMiddleware(thunk), 
+);
+
+
+store.dispatch(Actions.fetchFeatureAction());
+store.dispatch(Actions.fetchMakesAction());
+store.dispatch(Actions.fetchModelsAction());
 
 
 ReactDOM.render(<Provider store ={store}><BrowserRouter >
