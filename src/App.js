@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './components/style/App.css';
 import {Switch, Route} from "react-router-dom";
 import Feature from "./components/Feature"; 
@@ -11,8 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to my car browser</h1>
         </header>
         <nav>
           <NavLink to="/">Home</NavLink>
@@ -20,12 +18,10 @@ class App extends Component {
         </nav>
 
         <section> 
-
           <Switch> 
             <Route exact path ="/" component = {Feature}/> 
             <Route path = "/search" component = {Search}/> 
           </Switch> 
-
         </section> 
 
       </div>
