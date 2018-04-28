@@ -1,9 +1,37 @@
 import React,{Component} from 'react'
+import { connect } from 'react-redux';
 
 import './style/Feature.css'; 
 
-export default class Feature extends Component{
+class FeatureRender extends Component{
   render() {
-    return <div className ="Feature">feature </div>;
+
+    const {feature} = this.props;
+
+    return <div className ="Feature">feature
+      {JSON.stringify(feature)}
+     </div>;
   }
 }
+
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    feature: state.feature,
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+
+  }
+}
+
+const Feature = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FeatureRender);
+
+
+
+export default Feature;

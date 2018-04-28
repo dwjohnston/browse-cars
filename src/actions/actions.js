@@ -197,18 +197,17 @@ export function fetchModelsAction(make) {
 /** SELECT ACTIONS */
 
 
-export function selectMakeAction(make) {
+export function selectMakeAction(makeId) {
   return {
     type: ActionTypes.SELECT_MAKE,
-    make: make, 
+    makeId: makeId, 
   }
 }
 
 
-export function selectModelAction(make, model) {
+export function selectModelAction(modelId) {
   return {
     type: ActionTypes.SELECT_MODEL,
-    make: make, 
-    model: model, 
+    modelId: modelId, 
   }
 }
