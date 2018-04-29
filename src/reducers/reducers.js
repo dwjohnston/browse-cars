@@ -5,7 +5,7 @@ const initialState = {
     allModels: [], 
     feature: null, 
     makes: [], 
-    models: null, 
+    models: [], 
     selectedModel: null, 
     selectedMake: null, 
     selectedModelId: null, 
@@ -13,9 +13,17 @@ const initialState = {
 
 function populateFeature(state, action) {
 
-    return {
+    let newState = {
         feature: action.data, 
     }
+
+    //Update feature with model data, if model data exists.
+    if (state.models.length > 0) {
+        newState.feature.model = state.models.find(v => v.id === action.data.modelId); 
+        console.log("yes");
+    }
+
+    return newState; 
 }
 
 function populateMakes(state, action) {
@@ -32,10 +40,19 @@ function populateModels(state, action) {
 
 
     console.log("populatemodels");
-    return {
+    let newState = {
         allModels: action.data, 
         selectedModel: action.data.find(v => v.id == state.selectedModelId) //== intentional    //We need to populate the selectedModel if user is navigated straight to page and models haven't been populated yet. 
     }
+
+    //Update feature with model data, if feature exists. 
+    if (state.feature) {
+        newState.feature = state.feature; 
+        newState.feature.model = action.data.find(v=> v.id === state.feature.modelId); 
+    }
+
+    return newState; 
+
 }
 
 function selectMake(state, action) {

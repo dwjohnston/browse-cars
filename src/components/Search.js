@@ -23,7 +23,7 @@ class SearchRender extends Component{
  
 
       {/** 
-        There's probably better react implmentations of these, or just use bootstrap. 
+        There's probably better react implmentations of the select boxes. 
       */}
       <select className = "Search-Makes" name ="make" onChange = {e => onChangeMake(e.target.value)}>
           <option disabled = {true} selected ={true}>make</option>  
