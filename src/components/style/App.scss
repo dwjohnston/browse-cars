@@ -1,20 +1,13 @@
-
 @import "theme.scss";
 
-
 .App {
-
     margin: 2em;
 
     div {
-
-        //background-color: $color-grey-a; 
         padding: 1em;
     
     }
 }
-
-
 
 nav {
     background-color: $color-grey-b;
@@ -25,9 +18,6 @@ nav {
 
     border-radius: 0.5em 0.5em 0 0; 
 
-
-    
-    
     
     a {
         padding: 1em;

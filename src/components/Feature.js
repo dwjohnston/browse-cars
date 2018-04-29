@@ -12,20 +12,18 @@ class FeatureRender extends Component{
 
   render() {
 
-    const {feature, selectedModel} = this.props;
+    const {feature} = this.props;
 
     return <div className ="Feature">
       <h2>Car Of The Week </h2> 
 
         <NavLink to = {`${feature && feature.model && feature.model.makeId}/model/${feature && feature.model && feature.model.id}`}>
-          <img src = {feature && feature.model && feature.model.imageUrl}/>
+          <img src = {feature && feature.model && feature.model.imageUrl} />
         </NavLink>
         <p> {feature && feature.review}</p> 
-
      </div>;
   }
 }
-
 
 const mapStateToProps = (state, ownProps) => {
   return {

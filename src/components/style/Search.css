@@ -1,6 +1,9 @@
 .Search {
   display: flex;
   flex-flow: row nowrap; }
+  @media only screen and (max-width: 450px) {
+    .Search {
+      flex-flow: column nowrap; } }
   .Search select, .Search a, .Search button {
     flex: 0 0 4em;
     -webkit-appearance: button;
@@ -24,6 +27,10 @@
     margin-right: 0.5em; }
     .Search select.Search-Models, .Search a.Search-Models, .Search button.Search-Models {
       flex: 0 0 12em; }
+    @media only screen and (max-width: 450px) {
+      .Search select, .Search select.Search-Models, .Search a, .Search a.Search-Models, .Search button, .Search button.Search-Models {
+        margin-top: 0.5em;
+        flex: 0 0 auto; } }
   .Search a, .Search button {
     background-image: none;
     text-decoration: none; }

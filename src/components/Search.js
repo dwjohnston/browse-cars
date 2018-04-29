@@ -10,14 +10,9 @@ class SearchRender extends Component{
 
 
 
-  render() {
-
-   
+  render() { 
 
     const {makes, models,selectedMake, selectedModel,  onChangeMake, onChangeModel} = this.props; 
-
-    console.log("render event"); 
-    console.log(selectedMake); 
 
     return <div className ="Search">
  
@@ -25,26 +20,22 @@ class SearchRender extends Component{
       {/** 
         There's probably better react implmentations of the select boxes. 
       */}
-      <select className = "Search-Makes" name ="make" onChange = {e => onChangeMake(e.target.value)}>
+
+        <select className = "Search-Makes" name ="make" onChange = {e => onChangeMake(e.target.value)}>
           <option disabled = {true} selected ={true}>Make</option>  
           {makes && makes.map((v,i) => <option value = {v.id} key = {i} selected ={selectedMake && selectedMake.id === v.id}>{v.name}</option>)}
         </select> 
 
-
-
         <select className ="Search-Models" name = "model" onChange = {e => onChangeModel(e.target.value)}> 
-        <option disabled = {true} selected ={true}>Model</option>  
-
-        {models && models.map((v,i) => <option value = {v.id} key = {i} selected ={selectedModel && selectedModel.id === v.id}>{v.name}</option>)}
-
+          <option disabled = {true} selected ={true}>Model</option>  
+          {models && models.map((v,i) => <option value = {v.id} key = {i} selected ={selectedModel && selectedModel.id === v.id}>{v.name}</option>)}
         </select> 
 
-        {selectedModel ?  <NavLink  to = {`/${selectedModel && selectedModel.makeId}/model/${selectedModel && selectedModel.id}`}> Search </NavLink>
-        
-        : <button disabled className = "not-active">Search</button>}
-
-   
-    
+        {selectedModel ? 
+         <NavLink  to = {`/${selectedModel && selectedModel.makeId}/model/${selectedModel && selectedModel.id}`}> Search </NavLink>        
+         :<button disabled className = "not-active">Search</button>
+        }
+  
      </div>;
   }
 }

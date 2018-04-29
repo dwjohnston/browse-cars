@@ -1,13 +1,30 @@
+
+@import "media.scss"; 
+
 .Search {
 
     display: flex; 
     flex-flow: row nowrap; 
-
+    
+    @include narrow-screen{
+        flex-flow: column nowrap; 
+    }
 
     select, a, button {
 
 
         flex: 0 0 4em;
+
+        &.Search-Models {
+            flex: 0 0 12em;
+        }
+
+        @include narrow-screen {
+          &, &.Search-Models {
+            margin-top: 0.5em;
+            flex: 0 0 auto; 
+          }  
+        }
 
         //Taken from here: 
         //https://codepen.io/ericrasch/pen/zjDBx
@@ -33,30 +50,17 @@
         vertical-align: middle;
 
         margin-right: 0.5em;
-
-
-        &.Search-Models {
-            flex: 0 0 12em;
-        }
+     
     }
-
- 
-
 
     a, button {
 
         background-image: none;
         text-decoration: none;
-        //text-align: center;
-
-        //background-color: red; 
 
         &.not-active {
-            //pointer-events: none;
             cursor: not-allowed ;
-            //color: black;
             background-color: #999;
-
           }
     }
 }

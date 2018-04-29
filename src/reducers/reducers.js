@@ -23,8 +23,6 @@ function populateFeature(state, action) {
         console.log("yes");
     }
 
-    
-
     return newState; 
 }
 
@@ -39,9 +37,6 @@ function populateMakes(state, action) {
 }
 
 function populateModels(state, action) {
-
-
-    console.log("populatemodels");
     let newState = {
         allModels: action.data, 
         selectedModel: action.data.find(v => v.id == state.selectedModelId) //== intentional    //We need to populate the selectedModel if user is navigated straight to page and models haven't been populated yet. 
@@ -59,22 +54,15 @@ function populateModels(state, action) {
 
 function selectMake(state, action) {
 
-    console.log(action);
-
     let models= {
         selectedMake: state.allMakes.find(v => v.id == action.makeId), 
         models: state.allModels.filter(v => v.makeId == action.makeId)  //== intentional
     }; 
 
-    console.log(models); 
-    console.log(state.allModels);
     return models; 
 }
 
 function selectModel(state, action) {
-
-    console.log(action);
-    console.log(state.allModels);
 
     return {
         selectedModel: state.allModels.find(v => v.id == action.modelId) //== intentional

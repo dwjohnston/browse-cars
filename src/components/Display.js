@@ -2,20 +2,17 @@ import React,{Component} from 'react'
 import { connect } from 'react-redux';
 
 import * as Actions from "../actions/actions";
-
 import './style/Display.css'; 
 
 class DisplayRender extends Component{
 
   componentDidMount() {
-    console.log(this.props.match.params);
-
     this.props.onMount(this.props.match.params.make, this.props.match.params.model);
   }
 
   render() {
 
-    const {params, selectedModel, selectedMake} = this.props;
+    const {selectedModel, selectedMake} = this.props;
 
 
     return <div className ="Display"> 
@@ -24,9 +21,10 @@ class DisplayRender extends Component{
         <div><h2>{selectedMake.name} {selectedModel.name}</h2>
          <img src={selectedModel.imageUrl}/> 
          <span><strong>Price: </strong>{selectedModel.price.toLocaleString('en-US', {
-  style: 'currency',
-  currency: 'USD',
-})}</span>
+                                    style: 'currency',
+                                    currency: 'USD',
+                                  })}
+         </span>
         </div>
             
       }
@@ -37,8 +35,6 @@ class DisplayRender extends Component{
 
 
 const mapStateToProps = (state, ownProps) => {
-
-  console.log(state);
   return {
     selectedModel: state.selectedModel,
     selectedMake: state.selectedMake, 
