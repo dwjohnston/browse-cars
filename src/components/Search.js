@@ -12,34 +12,34 @@ class SearchRender extends Component{
 
   render() {
 
+   
+
     const {makes, models,selectedMake, selectedModel,  onChangeMake, onChangeModel} = this.props; 
 
+    console.log("render event"); 
+    console.log(selectedMake); 
 
     return <div className ="Search">
+ 
 
-    {JSON.stringify(makes)}
-    {JSON.stringify(models)}
-    {JSON.stringify(selectedModel)}
-
-    
-
-    <label> make: 
-      <select className = "Search-Makes" name ="make" onChange = {onChangeMake}> 
-          {makes && makes.map((v,i) => <option value = {v.id} key = {i}>{v.name}</option>)}
+      {/** 
+        There's probably better react implmentations of these, or just use bootstrap. 
+      */}
+      <select className = "Search-Makes" name ="make" onChange = {e => onChangeMake(e.target.value)}>
+          <option disabled = {true} selected ={true}>make</option>  
+          {makes && makes.map((v,i) => <option value = {v.id} key = {i} selected ={selectedMake && selectedMake.id === v.id}>{v.name}</option>)}
         </select> 
 
-        </label> 
 
-    <label> model: 
-        <select className ="Search-Models" name = "model" onChange = {onChangeModel}> 
-        {models && models.map((v,i) => <option value = {v.id} key = {i}>{v.name}</option>)}
+
+        <select className ="Search-Models" name = "model" onChange = {e => onChangeModel(e.target.value)}> 
+        <option disabled = {true} selected ={true}>model</option>  
+
+        {models && models.map((v,i) => <option value = {v.id} key = {i} selected ={selectedModel && selectedModel.id === v.id}>{v.name}</option>)}
 
         </select> 
 
-        </label> 
-
-
-        <NavLink to = {selectedMake && selectedModel && [selectedMake.name, selectedModel.id].join("/")}>Search</NavLink> 
+    <NavLink className = {(selectedMake && selectedModel) ? 'active' : 'not-active'}  to = {`/${selectedMake && selectedMake.name}/${selectedModel && selectedModel.id}`}> search </NavLink>
     
      </div>;
   }
@@ -57,8 +57,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onChangeMake: event => dispatch(Actions.selectMakeAction(event.target.value)), 
-    onChangeModel: event => dispatch(Actions.selectModelAction(event.target.value))
+    onChangeMake: v => dispatch(Actions.selectMakeAction(v)), 
+    onChangeModel: v => dispatch(Actions.selectModelAction(v))
   }
 }
 

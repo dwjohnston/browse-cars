@@ -40,9 +40,21 @@ export function populateMakesAction(data) {
 
 
 export  function populateModelsAction(data) {
+
+  
+
   return {
     type: ActionTypes.POPULATE_MODELS, 
     data: data, 
+  }
+}
+
+
+export function displayModelAction(makeName, modelId) {
+  return {
+    type: ActionTypes.DISPLAY_MODEL, 
+    modelId: modelId, 
+    makeName: makeName, 
   }
 }
 

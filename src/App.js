@@ -5,6 +5,8 @@ import './components/style/NavLink.css';
 import {Switch, Route, NavLink} from "react-router-dom";
 import Feature from "./components/Feature"; 
 import Search from "./components/Search"; 
+import Display from "./components/Display"; 
+
 
 class App extends Component {
   render() {
@@ -22,6 +24,7 @@ class App extends Component {
           <Switch> 
             <Route exact path ="/" component = {Feature}/> 
             <Route path = "/search" component = {Search}/> 
+            <Route path="/:make/:model" component={Display}/>
           </Switch> 
         </section> 
 
