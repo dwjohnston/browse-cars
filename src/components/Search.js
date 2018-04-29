@@ -39,7 +39,7 @@ class SearchRender extends Component{
 
         </select> 
 
-    <NavLink className = {(selectedMake && selectedModel) ? 'active' : 'not-active'}  to = {`/${selectedMake && selectedMake.name}/${selectedModel && selectedModel.id}`}> search </NavLink>
+    <NavLink className = {(selectedModel) ? 'active' : 'not-active'}  to = {`/${selectedModel && selectedModel.makeId}/model/${selectedModel && selectedModel.id}`}> search </NavLink>
     
      </div>;
   }

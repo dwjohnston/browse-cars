@@ -24,7 +24,7 @@ class App extends Component {
           <Switch> 
             <Route exact path ="/" component = {Feature}/> 
             <Route path = "/search" component = {Search}/> 
-            <Route path="/:make/:model" component={Display}/>
+            <Route path="/:make/model/:model" component={Display}/>
           </Switch> 
         </section> 
 

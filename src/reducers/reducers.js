@@ -23,6 +23,8 @@ function populateFeature(state, action) {
         console.log("yes");
     }
 
+    
+
     return newState; 
 }
 
@@ -31,7 +33,7 @@ function populateMakes(state, action) {
     return {
         allMakes: action.data,  //redundant I know, but conceptually it make sense that the raw data is different to the 'what's displayed in the select box'. For example, what if later you were applying a 'only european cars' filter, or similar. 
         makes: action.data, 
-        selectedMake: action.data.find(v => v.name == state.selectedMakeName)
+        selectedMake: action.data.find(v => v.id == state.selectedMakeId)
 
     }
 }
@@ -82,7 +84,7 @@ function selectModel(state, action) {
 function displayModel(state, action) {
     return{
         selectedModelId: action.modelId, 
-        selectedMakeName: action.makeName,
+        selectedMakeId: action.makeId,
 
     }
 }
