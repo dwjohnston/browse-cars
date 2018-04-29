@@ -82,11 +82,17 @@ function selectModel(state, action) {
 }
 
 function displayModel(state, action) {
-    return{
+    let newState = {
         selectedModelId: action.modelId, 
         selectedMakeId: action.makeId,
-
     }
+
+    if (state.allModels.length > 0 && state.allMakes.length > 0) {
+        newState.selectedMake = state.allMakes.find(v => v.id == action.makeId);
+        newState.selectedModel = state.allModels.find(v => v.id == action.modelId);
+    }
+
+    return newState; 
 }
 
 export default function reducers(state = initialState, action) {

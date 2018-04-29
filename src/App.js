@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to my car browser</h1>
+          <h1 className="App-title">Acme Car Browser</h1>
         </header>
         <nav>
           <NavLink exact={true} to="/">Home</NavLink>

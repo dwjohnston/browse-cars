@@ -8,7 +8,7 @@ import './style/Display.css';
 class DisplayRender extends Component{
 
   componentDidMount() {
-    console.log(this.props.match.params.model);
+    console.log(this.props.match.params);
 
     this.props.onMount(this.props.match.params.make, this.props.match.params.model);
   }
@@ -45,7 +45,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onMount: (makeName, modelId) => dispatch(Actions.displayModelAction(makeName, modelId))
+    onMount: (makeId, modelId) => dispatch(Actions.displayModelAction(makeId, modelId))
   }
 }
 
