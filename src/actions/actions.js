@@ -194,7 +194,8 @@ export function fetchModelsAction(make) {
       "makeId": 50,
       "name": "MX-5",
       "price": 90000,
-      "imageUrl": "http://www.mazda.com.au/assets/cars/allnewmx5/overview/standard-feature-panel/overview-roadster-gt.jpg"
+      //"imageUrl": "http://www.mazda.com.au/assets/cars/allnewmx5/overview/standard-feature-panel/overview-roadster-gt.jpg"
+      "imageUrl": "https://icdn2.digitaltrends.com/image/2016-mazda-mx-5-miata-front-angle-800x533-c.jpg?ver=1"
     }
   ]);
  }).then(data => {
