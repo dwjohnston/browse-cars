@@ -1,4 +1,12 @@
 .Display>div {
     display: flex; 
     flex-flow: column nowrap; 
+
+    img {
+        align-self: flex-start;
+    }
+
+    span {
+        margin: 1em 0; 
+    }
 }

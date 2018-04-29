@@ -1,0 +1,15 @@
+@import "theme.scss";
+
+body {
+    background-color: $color-grey-a; 
+
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $color-grey-d;
+
+
+    h1 {
+        color: $color-white-2; 
+        padding-left: 0.5em;
+    }
+}

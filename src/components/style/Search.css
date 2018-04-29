@@ -1,5 +1,32 @@
-.Search a .not-active {
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  color: black; }
+.Search {
+  display: flex;
+  flex-flow: row nowrap; }
+  .Search select, .Search a, .Search button {
+    flex: 0 0 4em;
+    -webkit-appearance: button;
+    -webkit-border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    -webkit-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -webkit-user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+    background-position: 97% center;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    color: #555;
+    overflow: hidden;
+    padding: 1em 3em 1em 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-right: 0.5em; }
+    .Search select.Search-Models, .Search a.Search-Models, .Search button.Search-Models {
+      flex: 0 0 12em; }
+  .Search a, .Search button {
+    background-image: none;
+    text-decoration: none; }
+    .Search a.not-active, .Search button.not-active {
+      cursor: not-allowed;
+      background-color: #999; }

@@ -1,5 +1,35 @@
-div {
-  padding: 1em;
-  margin: 1em;
-  border: solid 1px black;
-  background-color: #bbb; }
+.App {
+  margin: 2em; }
+  .App div {
+    padding: 1em; }
+
+nav {
+  background-color: #555;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  text-align: center;
+  border-radius: 0.5em 0.5em 0 0; }
+  nav a {
+    padding: 1em;
+    border: none;
+    border-radius: 0.5em 0.5em 0 0;
+    flex: 0 0 6em;
+    border: solid 0 #333;
+    border-width: 0 1px 0 0; }
+    nav a.active {
+      background-color: #999;
+      align-self: stretch;
+      border: none; }
+    nav a, nav a:visited {
+      text-decoration: none;
+      color: #eee; }
+    nav a:hover {
+      text-decoration: underline; }
+
+section {
+  background-color: #999;
+  padding: 0em 2em;
+  border-radius: 0 0 0.5em 0.5em; }
+  section img {
+    max-width: 100%; }

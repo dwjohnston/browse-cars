@@ -16,15 +16,17 @@ class DisplayRender extends Component{
   render() {
 
     const {params, selectedModel, selectedMake} = this.props;
-    console.log(this.props);
-    console.log(selectedModel, selectedMake); 
+
 
     return <div className ="Display"> 
 
       {selectedMake && selectedModel && 
         <div><h2>{selectedMake.name} {selectedModel.name}</h2>
          <img src={selectedModel.imageUrl}/> 
-         <span>Price: </span><span>{selectedModel.price}</span>
+         <span><strong>Price: </strong>{selectedModel.price.toLocaleString('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})}</span>
         </div>
             
       }

@@ -1,7 +1,69 @@
-div {
-    padding: 1em;
-    margin: 1em;
-    border: solid 1px black; 
-    background-color: #bbb;    
+
+@import "theme.scss";
+
+
+.App {
+
+    margin: 2em;
+
+    div {
+
+        //background-color: $color-grey-a; 
+        padding: 1em;
+    
+    }
+}
+
+
+
+nav {
+    background-color: $color-grey-b;
+    display: flex;
+    flex-flow: row nowrap; 
+    align-items: flex-end; 
+    text-align: center;
+
+    border-radius: 0.5em 0.5em 0 0; 
+
+
+    
+    
+    
+    a {
+        padding: 1em;
+        border: none; 
+        border-radius: 0.5em 0.5em 0 0;
+        flex: 0 0 6em;
+        border: solid 0 $color-grey-a; 
+        border-width: 0 1px 0 0; 
+
+        &.active {
+            background-color: $color-grey-c; 
+            align-self: stretch;
+            border: none;
+        }
+
+        &, &:visited{
+            text-decoration: none;
+            color: $color-white; 
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
 }
+
+section {
+    background-color: $color-grey-c; 
+    padding: 0em 2em;
+    border-radius: 0 0 0.5em 0.5em;
+
+
+    img {
+        max-width: 100%; 
+    }
+}
+
+

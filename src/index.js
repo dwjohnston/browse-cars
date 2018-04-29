@@ -14,6 +14,8 @@ import * as Actions from './actions/actions';
 
 import reducers from "./reducers/reducers"; 
 
+import "./components/style/index.css"; 
+
 const store = createStore(
     reducers,
     applyMiddleware(thunk), 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './components/style/App.css';
-import './components/style/NavLink.css';
 
 import {Switch, Route, NavLink} from "react-router-dom";
 import Feature from "./components/Feature"; 
