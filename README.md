@@ -2,6 +2,13 @@
 
 Scaffolded with [create-react-app](https://github.com/facebook/create-react-app).
 
+## Instructions
+
+```
+npm install && npm start 
+
+```
+
 ## Some notes
 
 - Uses react, react-router, redux, redux-thunk. 
